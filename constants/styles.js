@@ -93,7 +93,14 @@ size:{fontSize:15},
     fontSize: RFValue(20),
     fontWeight: 'bold',
   },
-
+  Texxt: {
+    textAlign:"center",
+    fontWeight:"700",
+    fontSize: 26,
+    // lineHeight:'normal',r
+    color:"#003128",
+    marginBottom:RFValue(30)
+  },
   text: (fontS) => ({
     color: greenText,
     fontWeight: 'bold',
@@ -105,5 +112,12 @@ size:{fontSize:15},
     fontWeight: 'bold',
     fontSize: RFValue(fontS),
   }),
+  container: {
+      alignItems:'center',
+    flex: 1,
+    flexDirection: 'column',
+    marginTop: RFValue(30),
+    padding: RFValue(10),
+  },
 });
 export default sty;

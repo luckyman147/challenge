@@ -4,9 +4,14 @@ import { createNativeStackNavigator, } from '@react-navigation/native-stack';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/register_page';
 
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { Image } from 'react-native';
 import { greenText } from './constants/constants';
+import { SettingsPage } from './pages/Settings_page';
 import MyGridComponent from './pages/main_page';
+import { MedecineList } from './pages/medecine_page';
+import { SearchPage } from './pages/searchPage';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 //use state
@@ -36,14 +41,14 @@ export default function App() {
               <Tab.Screen name="Medecine" 
               options={{tabBarIcon:mEDSTabIcon}}
               
-              component={MyGridComponent} />
-              <Tab.Screen name="Appoitements" 
+              component={MedecineList} />
+              <Tab.Screen name="Search" 
               options={{tabBarIcon:appTabIcon}}
               
-              component={MyGridComponent} />
+              component={SearchPage} />
               <Tab.Screen name="Profil" 
               options={{tabBarIcon:ProfilTabIcon}}
-              component={MyGridComponent} />
+              component={SettingsPage} />
             </Tab.Navigator>
           )}
         </Stack.Screen>
@@ -55,7 +60,8 @@ const HomeTabIcon = () => (
   <Image source={require("./assets/house.png") } style={{width:23,height:23}}></Image>
 
 );const appTabIcon = () => (
-  <Image source={require("./assets/calendar.png") } style={{width:23,height:23}}></Image>
+  <FontAwesomeIcon icon={faSearch} size={20} color="grey"  />
+
 
 );const ProfilTabIcon = () => (
 <Image source={require("./assets/compte.png") } style={{width:23,height:23}}></Image>

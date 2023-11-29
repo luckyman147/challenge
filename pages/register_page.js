@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { CheckBox } from 'react-native-elements';
-import { RFValue } from 'react-native-responsive-fontsize';
-import GreyCircleContainer from '../components/CircleContainer';
 import { AccountCheck } from '../components/accountCheck';
 import { Placeholder, PlaceholderWithIcon, PlaceholderWithSg } from '../components/placeholderSR';
 import { greenText, grey } from '../constants/constants';
-const RegisterPage = () => {
+import sty from "../constants/styles";
+const RegisterPage = ({navigation}) => {
   const [pin, setPin] = useState('');
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(false);
@@ -54,10 +53,10 @@ const ToLoginPress=()=>{
   };
 
   return (
-    <ScrollView contentContainerStyle={{ ...styles.container }}>
-<GreyCircleContainer  ></GreyCircleContainer>
-  <Text  style={styles.Text} >Create New Account </Text>
-      <View style={styles.textFieldContainer}>
+    <ScrollView contentContainerStyle={{ ...stylesRegister.container }}>
+
+  <Text  style={sty.Texxt} >Create New Account </Text>
+      <View style={stylesRegister.textFieldContainer}>
         <Placeholder input1={input1} text={"Username"} fun={(text) => setInput1(text)}></Placeholder>
         <Placeholder input1={input2} text={"Email"} fun={(text) => setInput2(text)}></Placeholder>
         <Placeholder input1={input3} text={"Phone N°1"} fun={(text) => setInput3(text)}></Placeholder>
@@ -67,7 +66,7 @@ const ToLoginPress=()=>{
        ></PlaceholderWithSg>
        <PlaceholderWithIcon functionToggle={toggleObscureText}  fun={(text) => setInput6(text)} pin={input6} obscureText={obscureText}></PlaceholderWithIcon>
        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}>
-        <Text style={{fontSize:20,fontWeight:700}}> Sex </Text>
+        <Text style={{fontSize:20,fontWeight:700}}> Gender </Text>
       <CheckBox
         title="Male"
         checked={checked1}
@@ -106,8 +105,8 @@ const ToLoginPress=()=>{
 
         {/* Repeat for other text fields */}
       </View>
-      <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
-        <Text style={styles.buttonText}>Sign Up</Text>
+      <TouchableOpacity style={stylesRegister.button} onPress={handleButtonPress}>
+        <Text style={stylesRegister.buttonText}>Sign Up</Text>
       </TouchableOpacity>
 
       {/* Row containing two text elements */}
@@ -117,7 +116,7 @@ const ToLoginPress=()=>{
   );
 };
 
-const styles = StyleSheet.create({
+export const stylesRegister = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
@@ -165,14 +164,7 @@ backgroundColor:grey,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  Text: {
-    textAlign:"center",
-    fontWeight:"700",
-    fontSize: 26,
-    // lineHeight:'normal',r
-    color:"#003128",
-    marginBottom:RFValue(30)
-  },
+ 
 });
 
 export default RegisterPage;

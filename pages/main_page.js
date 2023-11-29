@@ -7,21 +7,22 @@ import { tintcolor } from '../constants/constants';
 
 import { faFireFlameCurved, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import sty from '../constants/styles';
 // import { CustomLineItem } from '../components/CustomLineItem';
 const MyGridComponent = () => {
   return (
     <ScrollView style={{flex:1}}>
 
-        <View style={[styles.container]} >
-          <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:15}}>
-          <View style={{flexDirection:'row'}}>
+        <View style={[sty.container]} >
+          
+          <View style={{flexDirection:'row',marginVertical:RFValue(10),alignSelf:'center'}}>
 
 <Text style={[styles.Text,{fontWeight:400}]}> Good Morning, </Text>
 <Text style={[styles.Text,{fontWeight:700}]}> X, </Text>
 </View>
-<View style={styles.circle}></View>
 
-          </View>
+
+
 
       <View style={[styles.immageLIne,styles.general]}>
           
@@ -205,12 +206,7 @@ export const styles = StyleSheet.create({
     backgroundColor: tintcolor,
 
   }, 
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    marginTop: RFValue(19),
-    padding: RFValue(10),
-  },
+ 
   line2: {
     justifyContent: 'space-evenly', // Adjust based on your layout preferences
   },
