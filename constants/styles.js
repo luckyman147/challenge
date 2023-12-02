@@ -117,6 +117,7 @@ size:{fontSize:15},
     flex: 1,
     flexDirection: 'column',
     marginTop: RFValue(30),
+    marginBottom:RFValue(40),
     padding: RFValue(10),
   },
 });

@@ -8,7 +8,7 @@ package-lock.json
 .expo/
 dist/
 web-build/
-
+/back/
 # Native
 *.orig.*
 *.jks
